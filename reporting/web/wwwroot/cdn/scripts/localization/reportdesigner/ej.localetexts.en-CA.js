@@ -468,6 +468,7 @@ ej.ReportDesigner.Locale['en-CA'] = {
         create: 'Create',
         cancel: 'Cancel',
         close: 'Close',
+        errorMessage: 'Specify the report file name'
     },
     reportAction: {
         linkTo: 'Link To',
@@ -1399,6 +1400,7 @@ ej.ReportDesigner.Locale['en-CA'] = {
         },
         commonCategory: {
             placementCategory: {
+                placement: 'Placement',
                 inside: 'Inside',
                 outside: 'Outside',
                 cross: 'Cross'
@@ -1884,7 +1886,7 @@ ej.ReportDesigner.Locale['en-CA'] = {
                 database: 'Database',
                 advanceSwitch: 'Advanced Options',
                 encrypt: 'Encrypt',
-                trustserver: 'Trust Server Certificate'
+                trustServer: 'Trust Server Certificate'
             },
             advanceOption: {
                 connectionString: 'Connection String',

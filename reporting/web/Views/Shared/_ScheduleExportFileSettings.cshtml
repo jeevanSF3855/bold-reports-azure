@@ -23,6 +23,10 @@
         .ready(function () {
             $("#default-password, #custom-password").prop("disabled", "disabled");
             $("#enable-password-protection").prop("disabled", "disabled");
+
+            $(document).on("click", "#default-password", DisablePasswordCondition);
+
+            $(document).on("click", "#custom-password", EnablePasswordCondition);
         });
 </script>
 
@@ -47,11 +51,11 @@
 @Html.Label("password-type-label", "[[[Password Type]]]", new { @class = "col-lg-4 col-md-4 col-sm-4  app-textbox-label no-margin password-label-align" })
 <div class="col-lg-8 col-md-8 col-sm-8 no-margin form-input-field pull-left">
     <div class="pull-left col-lg-4 col-md-4 col-sm-4 no-margin no-padding">
-@Html.RadioButton("password-type", "", new { @class = "css-radio", @checked = "checked", onclick = "DisablePasswordCondition()", id = "default-password" })
+@Html.RadioButton("password-type", "", new { @class = "css-radio", @checked = "checked", id = "default-password" })
 @Html.Label("default-password", "[[[Default Password]]]", new { @class = "pull-left app-radio-label normal-font cls-margin-top8 notransition" })
 </div>
 <div class="pull-left col-lg-4 col-md-4 col-sm-4 no-margin no-padding">
-@Html.RadioButton("password-type", false, new { @class = "css-radio", onclick = "EnablePasswordCondition()", id = "custom-password" })
+@Html.RadioButton("password-type", false, new { @class = "css-radio", id = "custom-password" })
 @Html.Label("custom-password", "[[[Custom Password]]]", new { @class = "pull-left app-radio-label normal-font cls-margin-top8 notransition" })
 </div>
 <div class="bg-info col-lg-8 col-md-8 col-sm-8" id="default-password-info">

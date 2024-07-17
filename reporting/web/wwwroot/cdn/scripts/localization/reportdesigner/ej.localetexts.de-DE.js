@@ -468,6 +468,7 @@ ej.ReportDesigner.Locale['de-DE'] = {
         create: 'Erstellen',
         cancel: 'Stornieren',
         close: 'Schließen',
+        errorMessage: 'Geben Sie den Namen der Berichtsdatei an'
     },
     reportAction: {
         linkTo: 'Link zu',
@@ -1404,6 +1405,7 @@ ej.ReportDesigner.Locale['de-DE'] = {
         },
         commonCategory: {
             placementCategory: {
+                placement: 'Platzierung',
                 inside: 'Innerhalb',
                 outside: 'Draußen',
                 cross: 'Kreuz'
@@ -1889,7 +1891,7 @@ ej.ReportDesigner.Locale['de-DE'] = {
                 database: 'Datenbank',
                 advanceSwitch: 'Erweiterte Optionen',
                 encrypt: ' Verschlüsseln',
-                trustserver: 'Vertrauenswürdiges Serverzertifikat'
+                trustServer: 'Vertrauenswürdiges Serverzertifikat'
             },
             advanceOption: {
                 connectionString: 'Verbindungsstring',

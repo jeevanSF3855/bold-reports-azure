@@ -468,6 +468,7 @@ ej.ReportDesigner.Locale['es-ES'] = {
         create: 'Crear',
         cancel: 'Cancelar',
         close: 'Cerrar',
+        errorMessage: 'Especifique el nombre del archivo del informe'
     },
     reportAction: {
         linkTo: 'Vincular a',
@@ -1404,6 +1405,7 @@ ej.ReportDesigner.Locale['es-ES'] = {
         },
         commonCategory: {
             placementCategory: {
+                placement: 'Ubicación',
                 inside: 'Adentro',
                 outside: 'Afuera',
                 cross: 'Cruzado'
@@ -1889,7 +1891,7 @@ ej.ReportDesigner.Locale['es-ES'] = {
                 database: 'Base de datos',
                 advanceSwitch: 'Opciones avanzadas',
                 encrypt: 'encriptar',
-                trustserver: 'Certificado de Servidor de Confianza'
+                trustServer: 'Certificado de Servidor de Confianza'
             },
             advanceOption: {
                 connectionString: 'Cadena de conexión',

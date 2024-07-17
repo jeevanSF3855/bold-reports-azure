@@ -28,6 +28,7 @@
     var editDatasourceUrl = "@Url.Action("EditDatasourceView", "DataSources")";
     var changeDataSourceUrl = "@Url.Action("ChangeDataSource", "items")";
     var i_am_ie9 = false;
+    var itemGridPageNonce = "@Context.Items["ScriptNonce"]";
 </script>
 <!--[if LT IE  10]>
         <script nonce="@Context.Items["ScriptNonce"]">
@@ -131,7 +132,7 @@
         {{if ~checkMobile()}}
         {{if ItemType=="@((int)ItemType.File)"}}
         <li>
-            <a href="javascript:void(0);" title="" ispublic="{{:IsPublic}}" data-itemtype="{{:ItemType}}" data-item-id="{{:Id}}" data-item-type="@(gridName)" data-name="{{:Name}}" class="get-link option-click" data-url="{{:~fileUrlEncode(Id)}}">
+            <a href="#" title="" ispublic="{{:IsPublic}}" data-itemtype="{{:ItemType}}" data-item-id="{{:Id}}" data-item-type="@(gridName)" data-name="{{:Name}}" class="get-link option-click prevent-default-action" data-url="{{:~fileUrlEncode(Id)}}">
                 <i class="su su-link"></i>
                 <span>[[[Get Link]]]</span>
             </a>
@@ -190,7 +191,7 @@
         {{if !IsDraft}}
         {{if ItemType == "@((int)ItemType.Datasource)" && DatasourceType =="@((int)ConnectionMode.Extract)"}}
         <li>
-            <a href="javascript:void(0);" title="" class="refresh-history" data-itemname="{{:Name}}" data-item-id="{{:Id}}" data-itemtype="{{:ItemType}}">
+            <a href="#" title="" class="refresh-history prevent-default-action" data-itemname="{{:Name}}" data-item-id="{{:Id}}" data-itemtype="{{:ItemType}}">
                 <i class="su su-refresh-history"></i>
                 <span>[[[Refresh History]]]</span>
             </a>
@@ -205,7 +206,7 @@
         {{if ~checkMobile()}}
         {{if (@(permissionData[ItemType.Dataset].ToString().ToLower()) == true && ItemType == "@((int)ItemType.Dataset)")}}
         <li>
-            <a href="javascript:void(0);" title="" class="change-datasource" data-itemname="{{:Name}}" data-item-id="{{:Id}}" data-action="ChangeDataSource">
+            <a href="#" title="" class="change-datasource prevent-default-action" data-itemname="{{:Name}}" data-item-id="{{:Id}}" data-action="ChangeDataSource">
                 <i class="su su-copy"></i>
                 <span>[[[Change Data source]]]</span>
             </a>
@@ -221,7 +222,7 @@
         <li role="separator" class="divider"></li>
         {{/if}}
         <li>
-            <a href="javascript:void(0);" class="item-permissions" title="" data-itemname="{{:Name}}" data-item-id="{{:Id}}">
+            <a href="#" class="item-permissions prevent-default-action" title="" data-itemname="{{:Name}}" data-item-id="{{:Id}}">
                 <i class="su su-manage-permission"></i>
                 <span>[[[Sharing Permissions]]]</span>
             </a>
@@ -235,14 +236,13 @@
 
         {{if (~checkMobile() && ItemType!="@((int)ItemType.Datasource)")}}
         <li>
-            <a href="javascript:void(0);" class="version-button" title="" data-itemname="{{:Name}}" data-item-id="{{:Id}}">
+            <a href="#" class="version-button prevent-default-action" title="" data-itemname="{{:Name}}" data-item-id="{{:Id}}">
                 <i class="su su-versions"></i>
                 <span>[[[Version History]]]</span>
             </a>
         </li>
         {{/if}}
 
-        {{if @(globalAppSettings.SystemSettings.StorageType) == @((int)StorageType.FileStorage)}}
         {{if CanWrite}}
         {{if ~checkMobile()}}
         {{if ItemType == "@((int)ItemType.Dataset)"}}
@@ -256,7 +256,6 @@
         {{/if}}
         {{/if}}
         {{/if}}
-        {{/if}}
         
         {{if ~checkMobile()}}
         {{if CanWrite || CanDelete || ItemType=="@((int)ItemType.Report)"}}
@@ -267,14 +266,14 @@
         {{if ItemType=="@((int)ItemType.Report)"}}
         <li role="separator" class="divider"></li>
         <li>
-            <a href="javascript:void(0);" title="" class="item-edit" data-item-id="{{:Id}}">
+            <a href="#" title="" class="item-edit prevent-default-action" data-item-id="{{:Id}}">
                 <i class="su su-edit"></i>
                 <span>[[[Update Report]]]</span>
             </a>
         </li>
         @*{{else}}
         <li>
-            <a href="javascript:void(0);" title="" class="item-edit" data-item-id="{{:Id}}">
+            <a href="#" title="" class="item-edit" data-item-id="{{:Id}}">
                 <i class="su su-edit"></i>
                 <span>[[[Update]]]</span>
             </a>
@@ -286,7 +285,7 @@
         {{if ~checkMobile()}}
         {{if ItemType=="@((int)ItemType.Report)"}}
         <li>
-            <a href="javascript:void(0);" title="" class="update-datasource" data-item-id="{{:Id}}">
+            <a href="#" title="" class="update-datasource" data-item-id="{{:Id}}">
                 <i class="su su-datasource"></i>
                 <span>[[[Update Data Source(s)]]]</span>
             </a>
@@ -295,7 +294,6 @@
         {{/if}}
         {{/if}}*@
 
-        {{if @(globalAppSettings.SystemSettings.StorageType) == @((int)StorageType.FileStorage)}}
         {{if !IsLocked}}
         {{if ~checkMobile()}}
         {{if CanWrite}}
@@ -310,13 +308,12 @@
         {{/if}}
         {{/if}}
         {{/if}}
-        {{/if}}
 
         {{if !IsLocked}}
         {{if (~checkMobile() && CanWrite && ItemType!="@((int)ItemType.Datasource)")}}
         <li role="separator" class="divider"></li>
         <li>
-            <a href="javascript:void(0);" title="" class="item-edit" data-item-id="{{:Id}}">
+            <a href="#" title="" class="item-edit prevent-default-action" data-item-id="{{:Id}}">
                 <i class="su su-edit"></i>
                 <span>[[[Update]]]</span>
             </a>
@@ -328,7 +325,7 @@
         {{if CanWrite}}
         {{if ItemType=="@((int)ItemType.Datasource)"}}
         <li>
-            <a href="javascript:void(0);" title="" class="item-edit-datasource" data-item-id="{{:Id}}">
+            <a href="#" title="" class="item-edit-datasource prevent-default-action" data-item-id="{{:Id}}">
                 <i class="su su-edit"></i>
                 <span>[[[Update]]]</span>
             </a>
@@ -341,12 +338,12 @@
         {{if CanDelete}}
         <li>
             {{if ItemType=="@((int)ItemType.Datasource)"}}
-            <a href="javascript:void(0);" title="" class="item-delete" data-itemtype="{{:ItemType}}" data-item-id="{{:Id}}" data-name="{{:Name}}" data-datasource-type="{{:DatasourceType}}">
+            <a href="#" title="" class="item-delete prevent-default-action" data-itemtype="{{:ItemType}}" data-item-id="{{:Id}}" data-name="{{:Name}}" data-datasource-type="{{:DatasourceType}}">
                 <i class="su su-delete"></i>
                 <span>[[[Delete]]]</span>
             </a>
             {{else}}
-            <a href="javascript:void(0);" title="" class="item-delete" data-itemtype="{{:ItemType}}" data-item-id="{{:Id}}" data-name="{{:Name}}">
+            <a href="#" title="" class="item-delete prevent-default-action" data-itemtype="{{:ItemType}}" data-item-id="{{:Id}}" data-name="{{:Name}}">
                 <i class="su su-delete"></i>
                 <span>[[[Delete]]]</span>
             </a>
@@ -557,6 +554,10 @@
             renderDoubleQuotes: function (inputString) {
                 return inputString.replace(new RegExp("\"", 'g'), '&quot;');
             }
+        });
+
+        $(document).on("click", ".prevent-default-action", function (e) {
+            e.preventDefault();
         });
     });
 </script>

@@ -34,6 +34,10 @@
     var option = @Json.Serialize(ViewBag.ProcessOption);
     var categoryItems = @Json.Serialize(ViewBag.ItemCategoryMappingList);
 
+        $(document).ready(function () {
+            load();
+        });
+
         function load() {
             $('[data-toggle="tooltip"]').tooltip();
             if (($(parent.window).width()) > 1400) {
@@ -77,6 +81,7 @@
         $("#reportList").html(dashboardOption);
         $("#categoryList,#reportList").selectpicker("refresh");
         $(document).on("click", ".PopupClose", function(e) {
+            e.preventDefault();
             closePopup();
         });
         $(".add-report-processing-module .bs-deselect-all").after("<div class='bs-select-all-custom'><span>[[[Select All]]]</span><span class='bs-select-custom-tick glyphicon glyphicon-ok'></span></div>");
@@ -86,13 +91,13 @@
         });
     </script>
 </head>
-<body style="background-color:white" onload="load();">
+<body style="background-color:white">
 
     <div id="createReportPopupHolder" class="add-report-processing-module col-lg-12 no-padding dialog">
         <div class="col-xs-12 dialog-header">
             <span class="su su-cache_3 Head-icon"></span>
             <span class="PopupTitle">[[[Processing Options]]]</span>
-            <a href="javascript:void(0);" class="PopupClose" title="[[[Close]]]" data-toggle="tooltip" data-placement="bottom"><span class="su su-close"></span></a>
+            <a href="#" class="PopupClose" title="[[[Close]]]" data-toggle="tooltip" data-placement="bottom"><span class="su su-close"></span></a>
         </div>
         <div class="col-xs-12">
             <span class="caption heading">[[[Specify properties that determine how the report server runs the reports]]]</span>
@@ -210,13 +215,13 @@
             </div>
             <div class='create-rdl-btns'>
                 <input type='button' title="" value='[[[Save]]]' id='save_report_option' class='btn primary-button app-btn-primary small-right-margin'>
-                <input type='button' title="" value='[[[Cancel]]]' class='btn secondary-button app-btn-secondary NoStyleCloseClick' onclick="closeReportOptionPopup()">
+                <input type='button' title="" value='[[[Cancel]]]' class='btn secondary-button app-btn-secondary NoStyleCloseClick close-report-option-popup'>
             </div>
         </div>
         <div class='col-md-12 new-report-button-holder dialog-footer' id="nextProcessButton" style="display: none;">
             <div class='create-rdl-btns'>
                 <input type='button' title="" value='[[[Next]]]' id='next_report_option' class='btn primary-button app-btn-primary small-right-margin'>
-                <input type='button' title="" value='[[[Cancel]]]' class='btn secondary-button app-btn-secondary NoStyleCloseClick' onclick="closeReportOptionPopup()">
+                <input type='button' title="" value='[[[Cancel]]]' class='btn secondary-button app-btn-secondary NoStyleCloseClick close-report-option-popup'>
             </div>
         </div>
     </div>

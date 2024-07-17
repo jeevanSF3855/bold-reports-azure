@@ -11,7 +11,7 @@
                         <span class="modal-title">[[[Add User]]]</span>
                     </div>
                     <div class="col-xs-4 no-padding">
-                        <a class="close" title="[[[Close]]]" href="javascript:void(0);" onclick="onUserAddDialogClose()">
+                        <a id="user-add-dialog-close-link" class="close" title="[[[Close]]]" href="#">
                             <i class="su su-close"></i>
                         </a>
                     </div>
@@ -99,7 +99,7 @@
                     <div class="col-xs-4"></div>
                     <div class="col-xs-8 no-padding">
                         <input type="button" id="add-user" class="primary-button app-btn-primary" value="[[[Add]]]" />
-                        <input type="button" id="cancel-user" class="secondary-button app-btn-secondary popup-close" value="[[[Cancel]]]" onclick="onUserAddDialogClose()" />
+                        <input type="button" id="cancel-user" class="secondary-button app-btn-secondary popup-close" value="[[[Cancel]]]" />
                     </div>
                 </div>
             </form>

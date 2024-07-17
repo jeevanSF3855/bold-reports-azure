@@ -346,11 +346,11 @@ ej.ReportDesigner.Locale['fr-FR'] = {
                 groupName: 'Régions de données',
                 Items: {
                     'tablix': {
-                        displayText: 'Table',
+                        displayText: 'Tableau',
                         tooltip: {
                             requirements: '1 ou plusieurs lignes / colonnes.',
                             description: 'Affichez les données paginées sous forme de tableau.',
-                            title: 'Table'
+                            title: 'Tableau'
                         }
                     },
                     'list': {
@@ -468,6 +468,7 @@ ej.ReportDesigner.Locale['fr-FR'] = {
         fileName: 'nom de fichier',
         waterMark: 'nom du rapport',
         close: 'Fermer',
+        errorMessage: 'Spécifiez le nom du fichier de rapport'
     },
     reportAction: {
         linkTo: 'Lié à',
@@ -1404,6 +1405,7 @@ ej.ReportDesigner.Locale['fr-FR'] = {
         },
         commonCategory: {
             placementCategory: {
+                placement: 'Placement',
                 inside: 'À l\'intérieur',
                 outside: 'À l\'extérieur',
                 cross: 'Traverser'
@@ -1889,7 +1891,7 @@ ej.ReportDesigner.Locale['fr-FR'] = {
                 database: 'Base de données',
                 advanceSwitch: 'Options avancées',
                 encrypt: 'chiffrer',
-                trustserver: 'Certificat de Serveur de Confiance'
+                trustServer: 'Certificat de Serveur de Confiance'
             },
             advanceOption: {
                 connectionString: 'Chaîne de connexion',
@@ -4008,7 +4010,7 @@ ej.ReportDesigner.Locale['fr-FR'] = {
     rowColumnGroup: {
         rowGroupLable: 'Groupes de lignes',
         columnGroupLable: 'Groupes de colonnes',
-        tablixAlertHeader: 'Tablix',
+        tablixAlertHeader: 'Tableau',
         alertMessage: 'Activer l\'option Développer pour sélectionner l\'élément de rapport de tableau matriciel',
         contextMenu: {
             addgroup: 'Ajouter un groupe',
@@ -4971,7 +4973,7 @@ ej.ReportDesigner.Locale['fr-FR'] = {
         }
     },
     mapBindingFields: {
-        headerText: 'BindingField Pairs',
+        headerText: 'Paires de champs de liaison',
         addText: 'AJOUTER',
         updateText: 'Mise à jour',
         fieldName: 'Nom de domaine',

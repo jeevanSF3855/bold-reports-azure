@@ -468,6 +468,7 @@ ej.ReportDesigner.Locale['zh-CN'] = {
         fileName: '文件名',
         waterMark: '报告名称',
         close: '关',
+        errorMessage: '指定报告文件名'
     },
     reportAction: {
         linkTo: '链接到',
@@ -1404,6 +1405,7 @@ ej.ReportDesigner.Locale['zh-CN'] = {
         },
         commonCategory: {
             placementCategory: {
+                placement: '放置',
                 inside: '内',
                 outside: '外',
                 cross: '交叉'
@@ -1889,7 +1891,7 @@ ej.ReportDesigner.Locale['zh-CN'] = {
                 database: '数据库',
                 advanceSwitch: '高级选项',
                 encrypt: '加密',
-                trustserver: '信任服务器证书'
+                trustServer: '信任服务器证书'
             },
             advanceOption: {
                 connectionString: '连接字符串',
@@ -3499,7 +3501,7 @@ ej.ReportDesigner.Locale['zh-CN'] = {
             lineSpacing: '线高'
         },
         appearance: {
-            categoryName: 'Appearance',
+            categoryName: '外貌',
             borderTypes: {
                 default: '边境',
                 left: '剩下',
