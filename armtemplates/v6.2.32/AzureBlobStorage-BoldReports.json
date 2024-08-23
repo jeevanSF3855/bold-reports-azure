@@ -135,8 +135,8 @@
             "[resourceId('Microsoft.Web/Sites', parameters('WebAppName'))]"
           ],
           "properties": {
-            "RepoUrl": "https://github.com/boldreports/bold-reports-azure.git",
-            "branch": "v6.2.32",
+            "RepoUrl": "https://github.com/jeevanSF3855/bold-reports-azure.git",
+            "branch": "jeevan",
             "IsManualIntegration": true
           }
         },
